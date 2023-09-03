@@ -1,0 +1,14 @@
+version: "3"
+services:
+    projectbackend:
+        image: postgres
+        container_name: backend
+        restart: always
+        environment:
+            - POSTGRES_PASSWORD: admin
+            - POSTGRES_USER: admin
+            - POSTGRES_DB: backend
+        volumes:
+            - ./data:/var/lib/postgresql/data
+        ports:
+            - 5432:5432
